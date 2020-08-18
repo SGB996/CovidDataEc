@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression 
 #Datos historicos contagios totales Covid-19 Ecuador
-path1="Covid_dataset.csv"
-path2='Datasetcov-19.csv'
+path1="data/Covid_dataset.csv"
+path2='data/Datasetcov-19.csv'
 df=pd.read_csv(path1)
 #describe=df.describe()
 #print(describe)
@@ -19,7 +19,7 @@ plt.title('Casos Totales Covid-19 Ecuador desde\n 29 de Febrero hasta 16 de Agos
 plt.show()
  """
 #DatasetCov-19 agrupado por meses y dias final desde 01-06-2020 hasta 16-08-2020
-pathf='Finaldataset.csv'
+pathf='data/Finaldataset.csv'
 df_2=pd.read_csv(pathf)
 junAug=df_2.loc[df_2['mes']>=6]
 time=junAug[['index']]
