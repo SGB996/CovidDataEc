@@ -11,13 +11,13 @@ df=pd.read_csv(path1)
 #print(describe)
 y=df['c_totales']
 x=df['fecha']
-plt.figure(figsize=(12, 10))
+""" plt.figure(figsize=(12, 10))
 plt.plot(x,y)
 plt.xlabel('Fecha')
 plt.ylabel('Casos Totales')
 plt.title('Casos Totales Covid-19 Ecuador desde\n 29 de Febrero hasta 16 de Agosto')
 plt.show()
-
+ """
 #DatasetCov-19 agrupado por meses y dias final desde 01-06-2020 hasta 16-08-2020
 pathf='Finaldataset.csv'
 df_2=pd.read_csv(pathf)
@@ -38,9 +38,9 @@ error=lm.score(time,casos)
 print('R^2 es: ',error)
 
 #Prediccion
-test=np.arange(1,101,1).reshape(-1,1)
+test=np.arange(1,102,1).reshape(-1,1)
 prediction=lm.predict(test)
-print('la prediccion es: ',prediction[53])
+print('la prediccion es: ',prediction[99])
 
 #grafica de prediccion
 plt.figure(figsize=(12, 10))
