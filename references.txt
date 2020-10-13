@@ -1,3 +1,8 @@
-- reinicio campeonato nacional: 15 de agosto
-- 8 de septiembre prediccion de aproximadamente 117008 casos
+Authors: Santiago Granda https://github.com/SGB996, Jose Luna https://github.com/JoseLuna12
+
+- National football league restar: August 15th
+- Prediction to Sepetember 8th: Approximatelu 117008 cases
+
+Bibliography:
+
 https://www.elcomercio.com/actualidad/coe-casos-covid19-balance-carrasco.html
