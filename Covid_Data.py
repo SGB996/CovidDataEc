@@ -3,6 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression 
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+
 #Datos historicos contagios totales Covid-19 Ecuador
 path1="data/Covid_dataset.csv"
 path2='data/Datasetcov-19.csv'
@@ -26,28 +30,34 @@ time=junAug[['index']]
 xplot=junAug['index']
 casos=junAug['c_totales']
 
+#Data set split using Train Test split function  
+X_train, X_test, y_train, y_test = train_test_split(time, casos, test_size=0.2, random_state=4)
+print ('Train set:', X_train.shape,  y_train.shape)
+print ('Test set:', X_test.shape,  y_test.shape)
+
 #Entrenamiento para predecir casos de coronavirus usando regresion lineal con el dataset actual
 lm=LinearRegression()
-lm.fit(time,casos)
-print('el intercepto es: ',lm.intercept_)
-print('la pendiente es: ',lm.coef_)
+lm.fit(X_train, y_train)
+print('el intercepto: ', lm.intercept_)
+print('el coeficiente: ', lm.coef_)
 
+#Prediction using the test set
 
-#Calculo error R^2
-error=lm.score(time,casos)
-print('R^2 es: ',error)
+yhat=lm.predict(X_test)
 
-#Prediccion
-test=np.arange(1,102,1).reshape(-1,1)
-prediction=lm.predict(test)
-print('la prediccion es: ',prediction[99])
+#Model evaluation using MSE, and R-squared
+r2 = r2_score(y_test, yhat)
+mse = mean_squared_error(y_test, yhat)
+print('R^2 is: ', r2)
+print('Mean squaed error is: ', mse)
 
 #grafica de prediccion
 plt.figure(figsize=(12, 10))
-sns.regplot(x=xplot, y=casos, data=junAug, marker='+')
+plt.scatter(X_train, y_train, color='blue')
+plt.plot(X_train, lm.coef_*X_train + lm.intercept_, 'r')
 plt.xlabel('Meses: Junio-Agosto')
 plt.ylabel('Casos Totales Junio-Agosto')
-plt.title('Casos Totales Covid-19 Ecuador\n meses de Junio hasta Agosto')
+plt.title('Prediccion Casos Totales Covid-19 Ecuador\n meses de Junio hasta Agosto')
 plt.show()
 
 
