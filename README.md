@@ -1,7 +1,9 @@
-# Proyecto de Data science
+# Data Science Project -  Santiago Granda, Jose Luna (2020)
 
-## Fechas a tomar en cuenta
-- reinicio campeonato nacional: 15 de agosto
-- 8 de septiembre prediccion de aproximadamente 117008 casos
+### Dates to take into consideration:
+
+- National football league restart: August 15th
+- Prediction to Sepetember 8th: Approximately 117008 cases
+
 ## Bibliografia
 https://www.elcomercio.com/actualidad/coe-casos-covid19-balance-carrasco.html

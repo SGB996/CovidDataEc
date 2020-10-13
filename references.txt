@@ -1,8 +1,7 @@
-Authors: Santiago Granda https://github.com/SGB996, Jose Luna https://github.com/JoseLuna12
+## Authors: 
 
-- National football league restar: August 15th
-- Prediction to Sepetember 8th: Approximatelu 117008 cases
+Santiago Granda https://github.com/SGB996, Jose Luna https://github.com/JoseLuna12
 
-Bibliography:
+## Bibliography:
 
 https://www.elcomercio.com/actualidad/coe-casos-covid19-balance-carrasco.html
